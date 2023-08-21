@@ -74,6 +74,8 @@ class KafkaConsumer:
                 logger.ERROR(f"error from consumer {message.error()}")
                 return 0
             else:
+                self.message_handler(message)
+                logger.info(f"Consumer Message key: {message}")
                 return 1
 
 
